@@ -142,6 +142,28 @@
             box-shadow: 0 10px 30px rgba(74, 144, 226, 0.3);
         }
 
+        .plugin-image {
+            width: 200px;
+            height: 150px;
+            border-radius: 15px;
+            margin: 0 auto 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .plugin-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .plugin-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+        }
+
         .plugin-title {
             font-size: 2.2em;
             margin-bottom: 20px;
@@ -283,7 +305,7 @@
             <div class="avatar-container">
                 <div class="avatar">
                     <!-- Replace with your actual avatar image -->
-                    <img src="avatar.jpg" alt="Professional Game Developer" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block;">
+                    <img src="IGD.jpg" alt="Professional Game Developer" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block;">
                     <!-- Fallback if image not found -->
                     <div class="avatar-placeholder" style="display: none;">🎮</div>
                 </div>
@@ -304,7 +326,9 @@
             <section class="section">
                 <h2 class="section-title">Featured Assets</h2>
                 <div class="plugin-showcase" onclick="openUnityStore()">
-                    <div class="plugin-logo">SSSSS</div>
+                    <div class="plugin-image">
+                        <img src="SSSSS.jpg" alt="SSSSS Professional Suite Preview">
+                    </div>
                     <h3 class="plugin-title">SSSSS Professional Suite</h3>
                     <p class="plugin-description">
                         A comprehensive Unity asset package featuring advanced game scripts, cutting-edge 
@@ -347,9 +371,7 @@
         <div class="container">
             <p>&copy; 2024 Professional Independent Game Developer. Crafting excellence in Unity development.</p>
             <div class="social-links">
-                <a href="#">GitHub</a>
-                <a href="#">Unity Asset Store</a>
-                <a href="#">Contact</a>
+                <a href="https://discord.gg/dzJzhaCeUg">Contact</a>
             </div>
         </div>
     </footer>
@@ -373,7 +395,7 @@
         // Jump to Unity Asset Store
         function openUnityStore() {
             // Replace with your actual Unity Asset Store link
-            const unityStoreUrl = 'https://assetstore.unity.com/packages/your-asset-link';
+            const unityStoreUrl = 'https://assetstore.unity.com/preview/322226/1071949';
             window.open(unityStoreUrl, '_blank');
         }
 

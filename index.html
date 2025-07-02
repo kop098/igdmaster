@@ -325,42 +325,86 @@
         <div class="container">
             <section class="section">
                 <h2 class="section-title">Featured Assets</h2>
-                <div class="plugin-showcase" onclick="openUnityStore()">
+                
+                <!-- SSSSS Professional Suite -->
+                <div class="plugin-showcase" onclick="openUnityStore('sssss')">
                     <div class="plugin-image">
                         <img src="SSSSS.jpg" alt="SSSSS Professional Suite Preview">
                     </div>
                     <h3 class="plugin-title">SSSSS Professional Suite</h3>
                     <p class="plugin-description">
-                        A comprehensive Unity asset package featuring advanced game scripts, cutting-edge 
-                        rendering pipelines, sophisticated shaders, and powerful editor tools. 
+                        A comprehensive Unity asset package featuring advanced Screen Space Skin Surface Scattering, 
+                        cutting-edge rendering pipelines, sophisticated shaders, and powerful editor tools. 
                         Specially designed to provide independent game developers and small studios 
-                        with high-end, exquisite solutions that streamline workflow and enhance game quality.
+                        with high-end, exquisite solutions for realistic character rendering.
                     </p>
-                    <a href="#" class="unity-store-btn" onclick="event.stopPropagation(); openUnityStore();">
+                    <a href="#" class="unity-store-btn" onclick="event.stopPropagation(); openUnityStore('sssss');">
                         View on Unity Asset Store
                     </a>
                 </div>
 
+                <!-- BigWorldStreamer Professional System -->
+                <div class="plugin-showcase" onclick="openUnityStore('bigworld')" style="margin-top: 60px;">
+                    <div class="plugin-image">
+                        <img src="bigworldlogo.jpg" alt="BigWorldStreamer Professional System Preview">
+                    </div>
+                    <h3 class="plugin-title">BigWorldStreamer Professional System</h3>
+                    <p class="plugin-description">
+                        Advanced large world management system for Unity featuring intelligent terrain chunking, 
+                        quadtree-optimized scene streaming, and automated AssetBundle management. 
+                        Perfect for creating seamless open world experiences with professional-grade 
+                        performance optimization and memory management.
+                    </p>
+                    <a href="#" class="unity-store-btn" onclick="event.stopPropagation(); openUnityStore('bigworld');">
+                        View on Unity Asset Store
+                    </a>
+                </div>
+
+                <!-- SSSSS Features -->
                 <div class="features">
                     <div class="feature">
-                        <div class="feature-icon">🎮</div>
-                        <h3>Game Scripts</h3>
-                        <p>High-performance, well-architected game scripts that provide robust functionality for various gameplay mechanics</p>
+                        <div class="feature-icon">🎭</div>
+                        <h3>Skin Surface Scattering</h3>
+                        <p>Advanced screen space skin surface scattering technology for ultra-realistic character rendering</p>
                     </div>
                     <div class="feature">
                         <div class="feature-icon">🌟</div>
-                        <h3>Rendering Pipelines</h3>
-                        <p>Cutting-edge rendering solutions optimized for performance and visual quality across different platforms</p>
+                        <h3>Bidirectional Scattering</h3>
+                        <p>Innovative dual-layer scattering system handling both front-face and back-face transmission effects</p>
                     </div>
                     <div class="feature">
-                        <div class="feature-icon">✨</div>
-                        <h3>Advanced Shaders</h3>
-                        <p>Sophisticated shader collections that deliver stunning visual effects and artistic excellence</p>
+                        <div class="feature-icon">📱</div>
+                        <h3>Mobile Optimized</h3>
+                        <p>High-performance implementation specifically optimized for mobile devices without sacrificing quality</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🎨</div>
+                        <h3>Dynamic Texture Control</h3>
+                        <p>Real-time skin texture adjustment from rough matte to smooth metallic variations</p>
+                    </div>
+                </div>
+
+                <!-- BigWorldStreamer Features -->
+                <div class="features" style="margin-top: 50px;">
+                    <div class="feature">
+                        <div class="feature-icon">🌍</div>
+                        <h3>Intelligent Chunking</h3>
+                        <p>Automated terrain segmentation with perfect data preservation and spatial optimization</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🚀</div>
+                        <h3>Quadtree Optimization</h3>
+                        <p>O(log n) performance spatial indexing for efficient large world scene management</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🔄</div>
+                        <h3>Dynamic Streaming</h3>
+                        <p>Distance-based AssetBundle loading with intelligent memory management and cleanup</p>
                     </div>
                     <div class="feature">
                         <div class="feature-icon">🛠️</div>
-                        <h3>Editor Tools</h3>
-                        <p>Professional editor extensions that streamline development workflow and boost productivity</p>
+                        <h3>Professional Tools</h3>
+                        <p>Complete editor integration with visual progress tracking and automated configuration</p>
                     </div>
                 </div>
             </section>
@@ -393,9 +437,20 @@
         }
 
         // Jump to Unity Asset Store
-        function openUnityStore() {
-            // Replace with your actual Unity Asset Store link
-            const unityStoreUrl = 'https://assetstore.unity.com/packages/slug/322226';
+        function openUnityStore(assetType) {
+            let unityStoreUrl;
+            
+            if (assetType === 'sssss') {
+                // SSSSS Professional Suite Unity Asset Store link
+                unityStoreUrl = 'https://assetstore.unity.com/packages/slug/322226';
+            } else if (assetType === 'bigworld') {
+                // BigWorldStreamer Professional System Unity Asset Store link (placeholder)
+                unityStoreUrl = 'https://assetstore.unity.com/packages/slug/324077';
+            } else {
+                // Default fallback
+                unityStoreUrl = 'https://assetstore.unity.com/packages/slug/322226';
+            }
+            
             window.open(unityStoreUrl, '_blank');
         }
 

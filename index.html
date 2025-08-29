@@ -377,6 +377,20 @@
                     </a>
                 </div>
 
+                <!-- BigWorldGPUBatchCull Professional Solution -->
+                <div class="plugin-showcase" onclick="openUnityStore('gpubatch')" style="margin-top: 60px;">
+                    <div class="plugin-image">
+                        <img src="GPUBatchCull.jpg" alt="BigWorldGPUBatchCull Professional Solution Preview">
+                    </div>
+                    <h3 class="plugin-title">BigWorldGPUBatchCull</h3>
+                    <p class="plugin-description">
+                        BigWorldGPUBatchCull is a professional AAA GPU instancing and culling solution designed for Unity6 — Large-Scale Scene Instancing and Culling. A professional-grade rendering acceleration solution for Unity that, through intelligent grouping, GPU instancing, and multi-threaded culling, significantly reduces draw calls and consistently improves frame rate. Easy to deploy, suitable for projects from small scenes to open worlds with densely packed repetitive objects.
+                    </p>
+                    <a href="#" class="unity-store-btn" onclick="event.stopPropagation(); openUnityStore('gpubatch');">
+                        View on Unity Asset Store
+                    </a>
+                </div>
+
                 <!-- SSSSS Features -->
                 <div class="features">
                     <div class="feature">
@@ -448,6 +462,78 @@
                         <p>Comprehensive performance metrics and optimization reports with before/after comparisons</p>
                     </div>
                 </div>
+
+                <!-- BigWorldGPUBatchCull Features -->
+                <div class="features" style="margin-top: 50px;">
+                    <div class="feature">
+                        <div class="feature-icon">🧠</div>
+                        <h3>Smart Grouping</h3>
+                        <p>Automatic grouping by mesh/material with unified instance management for minimal overhead</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🧵</div>
+                        <h3>Multi-threaded Culling</h3>
+                        <p>Job System based view frustum and distance culling to maximize CPU/GPU parallelism</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🧩</div>
+                        <h3>Dynamic Instancing</h3>
+                        <p>LOD support, adaptive batch size, and low memory usage for stable performance</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🖥️</div>
+                        <h3>Cross-Platform Optimization</h3>
+                        <p>Consistent results across mobile, PC, and consoles with memory-friendly management</p>
+                    </div>
+                </div>
+
+                <!-- BigWorldGPUBatchCull Use Cases -->
+                <div class="features" style="margin-top: 50px;">
+                    <div class="feature">
+                        <div class="feature-icon">👥</div>
+                        <h3>RTS/SLGs</h3>
+                        <p>Handle large numbers of units smoothly with efficient instancing and culling</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🌳</div>
+                        <h3>Open-World Environments</h3>
+                        <p>Vegetation, cities, and environmental objects at scale</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🏙️</div>
+                        <h3>City Building & Simulation</h3>
+                        <p>Dense, repetitive objects with high rendering efficiency</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🏎️</div>
+                        <h3>Racing & Crowds</h3>
+                        <p>Tracks, stands, and animated crowds rendered efficiently</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🧭</div>
+                        <h3>Survival/Sandbox</h3>
+                        <p>Massive object counts with smooth frame rates</p>
+                    </div>
+                </div>
+
+                <!-- BigWorldGPUBatchCull Included Contents -->
+                <div class="features" style="margin-top: 50px;">
+                    <div class="feature">
+                        <div class="feature-icon">🛠️</div>
+                        <h3>Editor & Runtime</h3>
+                        <p>Editor tools and runtime controllers for streamlined workflows</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">📊</div>
+                        <h3>Monitoring & Visualization</h3>
+                        <p>Performance statistics, visual inspectors, and tuning tools</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">📄</div>
+                        <h3>Samples & Docs</h3>
+                        <p>Sample configurations and documentation to get started fast</p>
+                    </div>
+                </div>
             </section>
         </div>
     </main>
@@ -490,6 +576,9 @@
             } else if (assetType === 'superbatch') {
                 // BigWorldSuperBatchMesh Unity Asset Store link
                 unityStoreUrl = 'https://assetstore.unity.com/packages/slug/325622';
+            } else if (assetType === 'gpubatch') {
+                // BigWorldGPUBatchCull Unity Asset Store link (placeholder)
+                unityStoreUrl = 'https://u3d.as/3AM7';
             } else {
                 // Default fallback
                 unityStoreUrl = 'https://assetstore.unity.com/packages/slug/322226';

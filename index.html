@@ -272,6 +272,78 @@
             }
         }
 
+        /* New layout for plugin grid (two per row) */
+        .plugin-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .plugin-grid .plugin-showcase {
+            margin: 0; /* override any inline margins */
+        }
+
+        @media (max-width: 768px) {
+            .plugin-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Unified features marquee: 4 compact rows, horizontal auto-scroll */
+        .features-marquee {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .features-rows {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .features-row {
+            display: inline-flex;
+            align-items: stretch;
+            gap: 14px;
+            animation: scrollLeft var(--dur, 60s) linear infinite;
+            will-change: transform;
+        }
+
+        @keyframes scrollLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Compact feature cards inside marquee */
+        .features-marquee .feature {
+            min-width: 240px;
+            max-width: 280px;
+            padding: 14px 16px;
+            border-radius: 12px;
+            background: rgba(40, 40, 40, 0.6);
+            border: 1px solid #333;
+        }
+
+        .features-marquee .feature-icon {
+            font-size: 1.4em;
+            margin-bottom: 8px;
+            color: #4a90e2;
+        }
+
+        .features-marquee .feature h3 {
+            font-size: 1em;
+            margin-bottom: 6px;
+        }
+
+        .features-marquee .feature p {
+            font-size: 0.9em;
+            line-height: 1.4;
+            color: #aaa;
+        }
+
         .particles {
             position: fixed;
             top: 0;
@@ -326,214 +398,151 @@
             <section class="section">
                 <h2 class="section-title">Featured Assets</h2>
                 
-                <!-- SSSSS Professional Suite -->
-                <div class="plugin-showcase" onclick="openUnityStore('sssss')">
-                    <div class="plugin-image">
-                        <img src="SSSSS.jpg" alt="SSSSS Professional Suite Preview">
+                <div class="plugin-grid">
+                    <!-- GPU2DAnimator URP 2D VAT (Newest first) -->
+                    <div class="plugin-showcase" onclick="openUnityStore('gpu2danimator')">
+                        <div class="plugin-image">
+                            <img src="GPU2DAnimator.jpg" alt="GPU2DAnimator URP 2D VAT Preview">
+                        </div>
+                        <h3 class="plugin-title">GPU2DAnimator</h3>
+                        <p class="plugin-description">
+                            GPU2DAnimator is a professional URP‑ready 2D GPU vertex animation (VAT) solution for Unity — GPU‑Driven 2D Skeletal Animation for URP. By baking SpriteSkin motion into EXR textures and sampling in the GPU vertex stage, it removes Animator/SpriteSkin CPU cost, enabling massive batching and stable FPS on mobile, PC, and consoles.
+                        </p>
+                        <a href="#" class="unity-store-btn" onclick="event.stopPropagation(); openUnityStore('gpu2danimator');">
+                            View on Unity Asset Store
+                        </a>
                     </div>
-                    <h3 class="plugin-title">SSSSS Professional Suite</h3>
-                    <p class="plugin-description">
-                        A comprehensive Unity asset package featuring advanced Screen Space Skin Surface Scattering, 
-                        cutting-edge rendering pipelines, sophisticated shaders, and powerful editor tools. 
-                        Specially designed to provide independent game developers and small studios 
-                        with high-end, exquisite solutions for realistic character rendering.
-                    </p>
-                    <a href="#" class="unity-store-btn" onclick="event.stopPropagation(); openUnityStore('sssss');">
-                        View on Unity Asset Store
-                    </a>
-                </div>
 
-                <!-- BigWorldStreamer Professional System -->
-                <div class="plugin-showcase" onclick="openUnityStore('bigworld')" style="margin-top: 60px;">
-                    <div class="plugin-image">
-                        <img src="bigworldlogo.jpg" alt="BigWorldStreamer Professional System Preview">
+                    <!-- GPUAnimator AAA GPU Animation -->
+                    <div class="plugin-showcase" onclick="openUnityStore('gpuanimator')">
+                        <div class="plugin-image">
+                            <img src="GPUAnimator.jpg" alt="GPUAnimator AAA GPU Animation Preview">
+                        </div>
+                        <h3 class="plugin-title">GPUAnimator</h3>
+                        <p class="plugin-description">
+                            GPUAnimator brings AAA GPU animation to Unity — SRP/MONO‑ready and built for massive crowds. Not DOTS/ECS, designed for MONO and easy use. A professional-grade GPU skinning and animated texture solution for Unity 6+.
+                        </p>
+                        <a href="#" class="unity-store-btn" onclick="event.stopPropagation(); openUnityStore('gpuanimator');">
+                            View on Unity Asset Store
+                        </a>
                     </div>
-                    <h3 class="plugin-title">BigWorldStreamer Professional System</h3>
-                    <p class="plugin-description">
-                        Advanced large world management system for Unity featuring intelligent terrain chunking, 
-                        quadtree-optimized scene streaming, and automated AssetBundle management. 
-                        Perfect for creating seamless open world experiences with professional-grade 
-                        performance optimization and memory management.
-                    </p>
-                    <a href="#" class="unity-store-btn" onclick="event.stopPropagation(); openUnityStore('bigworld');">
-                        View on Unity Asset Store
-                    </a>
-                </div>
 
-                <!-- BigWorldSuperBatchMesh Professional Tool -->
-                <div class="plugin-showcase" onclick="openUnityStore('superbatch')" style="margin-top: 60px;">
-                    <div class="plugin-image">
-                        <img src="SuperBatchMeshLogo.jpg" alt="BigWorldSuperBatchMesh Professional Tool Preview">
+                    <!-- BigWorldGPUBatchCull Professional Solution -->
+                    <div class="plugin-showcase" onclick="openUnityStore('gpubatch')">
+                        <div class="plugin-image">
+                            <img src="GPUBatchCull.jpg" alt="BigWorldGPUBatchCull Professional Solution Preview">
+                        </div>
+                        <h3 class="plugin-title">BigWorldGPUBatchCull</h3>
+                        <p class="plugin-description">
+                            BigWorldGPUBatchCull is a professional AAA GPU instancing and culling solution designed for Unity6 — Large-Scale Scene Instancing and Culling. A professional-grade rendering acceleration solution for Unity that, through intelligent grouping, GPU instancing, and multi-threaded culling, significantly reduces draw calls and consistently improves frame rate. Easy to deploy, suitable for projects from small scenes to open worlds with densely packed repetitive objects.
+                        </p>
+                        <a href="#" class="unity-store-btn" onclick="event.stopPropagation(); openUnityStore('gpubatch');">
+                            View on Unity Asset Store
+                        </a>
                     </div>
-                    <h3 class="plugin-title">BigWorldSuperBatchMesh Professional Tool</h3>
-                    <p class="plugin-description">
-                        Revolutionary mesh batching and optimization system for Unity that dramatically reduces draw calls 
-                        and improves rendering performance. Features intelligent mesh combination, automatic LOD generation, 
-                        and advanced material batching techniques. Essential for large-scale environments and 
-                        performance-critical applications requiring maximum rendering efficiency.
-                    </p>
-                    <a href="#" class="unity-store-btn" onclick="event.stopPropagation(); openUnityStore('superbatch');">
-                        View on Unity Asset Store
-                    </a>
-                </div>
 
-                <!-- BigWorldGPUBatchCull Professional Solution -->
-                <div class="plugin-showcase" onclick="openUnityStore('gpubatch')" style="margin-top: 60px;">
-                    <div class="plugin-image">
-                        <img src="GPUBatchCull.jpg" alt="BigWorldGPUBatchCull Professional Solution Preview">
+                    <!-- BigWorldSuperBatchMesh Professional Tool -->
+                    <div class="plugin-showcase" onclick="openUnityStore('superbatch')">
+                        <div class="plugin-image">
+                            <img src="SuperBatchMeshLogo.jpg" alt="BigWorldSuperBatchMesh Professional Tool Preview">
+                        </div>
+                        <h3 class="plugin-title">BigWorldSuperBatchMesh Professional Tool</h3>
+                        <p class="plugin-description">
+                            Revolutionary mesh batching and optimization system for Unity that dramatically reduces draw calls 
+                            and improves rendering performance. Features intelligent mesh combination, automatic LOD generation, 
+                            and advanced material batching techniques. Essential for large-scale environments and 
+                            performance-critical applications requiring maximum rendering efficiency.
+                        </p>
+                        <a href="#" class="unity-store-btn" onclick="event.stopPropagation(); openUnityStore('superbatch');">
+                            View on Unity Asset Store
+                        </a>
                     </div>
-                    <h3 class="plugin-title">BigWorldGPUBatchCull</h3>
-                    <p class="plugin-description">
-                        BigWorldGPUBatchCull is a professional AAA GPU instancing and culling solution designed for Unity6 — Large-Scale Scene Instancing and Culling. A professional-grade rendering acceleration solution for Unity that, through intelligent grouping, GPU instancing, and multi-threaded culling, significantly reduces draw calls and consistently improves frame rate. Easy to deploy, suitable for projects from small scenes to open worlds with densely packed repetitive objects.
-                    </p>
-                    <a href="#" class="unity-store-btn" onclick="event.stopPropagation(); openUnityStore('gpubatch');">
-                        View on Unity Asset Store
-                    </a>
-                </div>
 
-                <!-- SSSSS Features -->
-                <div class="features">
-                    <div class="feature">
-                        <div class="feature-icon">🎭</div>
-                        <h3>Skin Surface Scattering</h3>
-                        <p>Advanced screen space skin surface scattering technology for ultra-realistic character rendering</p>
+                    <!-- BigWorldStreamer Professional System -->
+                    <div class="plugin-showcase" onclick="openUnityStore('bigworld')">
+                        <div class="plugin-image">
+                            <img src="bigworldlogo.jpg" alt="BigWorldStreamer Professional System Preview">
+                        </div>
+                        <h3 class="plugin-title">BigWorldStreamer Professional System</h3>
+                        <p class="plugin-description">
+                            Advanced large world management system for Unity featuring intelligent terrain chunking, 
+                            quadtree-optimized scene streaming, and automated AssetBundle management. 
+                            Perfect for creating seamless open world experiences with professional-grade 
+                            performance optimization and memory management.
+                        </p>
+                        <a href="#" class="unity-store-btn" onclick="event.stopPropagation(); openUnityStore('bigworld');">
+                            View on Unity Asset Store
+                        </a>
                     </div>
-                    <div class="feature">
-                        <div class="feature-icon">🌟</div>
-                        <h3>Bidirectional Scattering</h3>
-                        <p>Innovative dual-layer scattering system handling both front-face and back-face transmission effects</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">📱</div>
-                        <h3>Mobile Optimized</h3>
-                        <p>High-performance implementation specifically optimized for mobile devices without sacrificing quality</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">🎨</div>
-                        <h3>Dynamic Texture Control</h3>
-                        <p>Real-time skin texture adjustment from rough matte to smooth metallic variations</p>
-                    </div>
-                </div>
 
-                <!-- BigWorldStreamer Features -->
-                <div class="features" style="margin-top: 50px;">
-                    <div class="feature">
-                        <div class="feature-icon">🌍</div>
-                        <h3>Intelligent Chunking</h3>
-                        <p>Automated terrain segmentation with perfect data preservation and spatial optimization</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">🚀</div>
-                        <h3>Quadtree Optimization</h3>
-                        <p>O(log n) performance spatial indexing for efficient large world scene management</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">🔄</div>
-                        <h3>Dynamic Streaming</h3>
-                        <p>Distance-based AssetBundle loading with intelligent memory management and cleanup</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">🛠️</div>
-                        <h3>Professional Tools</h3>
-                        <p>Complete editor integration with visual progress tracking and automated configuration</p>
+                    <!-- SSSSS Professional Suite -->
+                    <div class="plugin-showcase" onclick="openUnityStore('sssss')">
+                        <div class="plugin-image">
+                            <img src="SSSSS.jpg" alt="SSSSS Professional Suite Preview">
+                        </div>
+                        <h3 class="plugin-title">SSSSS Professional Suite</h3>
+                        <p class="plugin-description">
+                            A comprehensive Unity asset package featuring advanced Screen Space Skin Surface Scattering, 
+                            cutting-edge rendering pipelines, sophisticated shaders, and powerful editor tools. 
+                            Specially designed to provide independent game developers and small studios 
+                            with high-end, exquisite solutions for realistic character rendering.
+                        </p>
+                        <a href="#" class="unity-store-btn" onclick="event.stopPropagation(); openUnityStore('sssss');">
+                            View on Unity Asset Store
+                        </a>
                     </div>
                 </div>
 
-                <!-- BigWorldSuperBatchMesh Features -->
-                <div class="features" style="margin-top: 50px;">
-                    <div class="feature">
-                        <div class="feature-icon">⚡</div>
-                        <h3>Super Mesh Batching</h3>
-                        <p>Revolutionary mesh combination technology that dramatically reduces draw calls for massive performance gains</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">🎯</div>
-                        <h3>Intelligent Optimization</h3>
-                        <p>Automatic LOD generation and material batching with smart texture atlas creation for optimal rendering</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">🔧</div>
-                        <h3>One-Click Processing</h3>
-                        <p>Seamless editor integration with batch processing capabilities and real-time optimization preview</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">📊</div>
-                        <h3>Performance Analytics</h3>
-                        <p>Comprehensive performance metrics and optimization reports with before/after comparisons</p>
-                    </div>
-                </div>
-
-                <!-- BigWorldGPUBatchCull Features -->
-                <div class="features" style="margin-top: 50px;">
-                    <div class="feature">
-                        <div class="feature-icon">🧠</div>
-                        <h3>Smart Grouping</h3>
-                        <p>Automatic grouping by mesh/material with unified instance management for minimal overhead</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">🧵</div>
-                        <h3>Multi-threaded Culling</h3>
-                        <p>Job System based view frustum and distance culling to maximize CPU/GPU parallelism</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">🧩</div>
-                        <h3>Dynamic Instancing</h3>
-                        <p>LOD support, adaptive batch size, and low memory usage for stable performance</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">🖥️</div>
-                        <h3>Cross-Platform Optimization</h3>
-                        <p>Consistent results across mobile, PC, and consoles with memory-friendly management</p>
+                <!-- Unified Features Marquee (compact, 4 rows, auto-scroll) -->
+                <div class="features-marquee">
+                    <div class="features-rows" id="featuresRows"></div>
+                    <div id="featuresSource" style="display:none;">
+                        <!-- GPU2DAnimator Key Features -->
+                        <div class="feature"><div class="feature-icon">🧷</div><h3>URP‑Ready VAT</h3><p>GPU‑driven 2D skeletal animation optimized for URP</p></div>
+                        <div class="feature"><div class="feature-icon">🧪</div><h3>EXR Bake</h3><p>Bake SpriteSkin motion into EXR textures for zero CPU animator cost</p></div>
+                        <div class="feature"><div class="feature-icon">🧮</div><h3>GPU Vertex Sampling</h3><p>Vertex‑stage sampling removes Animator/SpriteSkin overhead</p></div>
+                        <div class="feature"><div class="feature-icon">📱</div><h3>Massive Batching</h3><p>Stable FPS on mobile, PC, and consoles with large sprite crowds</p></div>
+                        <!-- GPUAnimator Key Features -->
+                        <div class="feature"><div class="feature-icon">🎬</div><h3>AAA GPU Animation</h3><p>High-fidelity GPU skinning with animated textures for large crowds</p></div>
+                        <div class="feature"><div class="feature-icon">🔌</div><h3>SRP/MONO‑Ready</h3><p>Works with SRP and MonoBehaviour workflows; no DOTS/ECS required</p></div>
+                        <div class="feature"><div class="feature-icon">👥</div><h3>Massive Crowds</h3><p>Thousands of animated instances with stable frame rates</p></div>
+                        <div class="feature"><div class="feature-icon">💡</div><h3>Easy Integration</h3><p>Drop‑in setup and clear APIs for Unity 6+</p></div>
+                        <!-- BigWorldGPUBatchCull Features -->
+                        <div class="feature"><div class="feature-icon">🧠</div><h3>Smart Grouping</h3><p>Automatic grouping by mesh/material with unified instances</p></div>
+                        <div class="feature"><div class="feature-icon">🧵</div><h3>Multi-threaded Culling</h3><p>Job System view frustum and distance culling</p></div>
+                        <div class="feature"><div class="feature-icon">🧩</div><h3>Dynamic Instancing</h3><p>LOD, adaptive batch size, low memory usage</p></div>
+                        <div class="feature"><div class="feature-icon">🖥️</div><h3>Cross-Platform</h3><p>Consistent results on mobile, PC, and consoles</p></div>
+                        <!-- BigWorldSuperBatchMesh Features -->
+                        <div class="feature"><div class="feature-icon">⚡</div><h3>Super Mesh Batching</h3><p>Reduce draw calls for massive gains</p></div>
+                        <div class="feature"><div class="feature-icon">🎯</div><h3>Intelligent Optimization</h3><p>Auto LOD and smart material batching</p></div>
+                        <div class="feature"><div class="feature-icon">🔧</div><h3>One-Click Processing</h3><p>Batch tools with live preview</p></div>
+                        <div class="feature"><div class="feature-icon">📊</div><h3>Performance Analytics</h3><p>Detailed metrics and comparisons</p></div>
+                        <!-- BigWorldStreamer Features -->
+                        <div class="feature"><div class="feature-icon">🌍</div><h3>Intelligent Chunking</h3><p>Automated segmentation and optimization</p></div>
+                        <div class="feature"><div class="feature-icon">🚀</div><h3>Quadtree Optimization</h3><p>Efficient large world management</p></div>
+                        <div class="feature"><div class="feature-icon">🔄</div><h3>Dynamic Streaming</h3><p>Distance-based loading and cleanup</p></div>
+                        <div class="feature"><div class="feature-icon">🛠️</div><h3>Professional Tools</h3><p>Editor integration and automation</p></div>
+                        <!-- SSSSS Features -->
+                        <div class="feature"><div class="feature-icon">🎭</div><h3>Skin Surface Scattering</h3><p>Ultra-realistic character rendering</p></div>
+                        <div class="feature"><div class="feature-icon">🌟</div><h3>Bidirectional Scattering</h3><p>Front/back transmission effects</p></div>
+                        <div class="feature"><div class="feature-icon">📱</div><h3>Mobile Optimized</h3><p>High performance on mobile</p></div>
+                        <div class="feature"><div class="feature-icon">🎨</div><h3>Dynamic Texture Control</h3><p>Real-time adjustments</p></div>
                     </div>
                 </div>
 
-                <!-- BigWorldGPUBatchCull Use Cases -->
-                <div class="features" style="margin-top: 50px;">
-                    <div class="feature">
-                        <div class="feature-icon">👥</div>
-                        <h3>RTS/SLGs</h3>
-                        <p>Handle large numbers of units smoothly with efficient instancing and culling</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">🌳</div>
-                        <h3>Open-World Environments</h3>
-                        <p>Vegetation, cities, and environmental objects at scale</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">🏙️</div>
-                        <h3>City Building & Simulation</h3>
-                        <p>Dense, repetitive objects with high rendering efficiency</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">🏎️</div>
-                        <h3>Racing & Crowds</h3>
-                        <p>Tracks, stands, and animated crowds rendered efficiently</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">🧭</div>
-                        <h3>Survival/Sandbox</h3>
-                        <p>Massive object counts with smooth frame rates</p>
-                    </div>
-                </div>
+                
 
-                <!-- BigWorldGPUBatchCull Included Contents -->
-                <div class="features" style="margin-top: 50px;">
-                    <div class="feature">
-                        <div class="feature-icon">🛠️</div>
-                        <h3>Editor & Runtime</h3>
-                        <p>Editor tools and runtime controllers for streamlined workflows</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">📊</div>
-                        <h3>Monitoring & Visualization</h3>
-                        <p>Performance statistics, visual inspectors, and tuning tools</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">📄</div>
-                        <h3>Samples & Docs</h3>
-                        <p>Sample configurations and documentation to get started fast</p>
-                    </div>
-                </div>
+                
+
+                
+
+                
+
+                
+
+                
+
+                
             </section>
         </div>
     </main>
@@ -579,6 +588,12 @@
             } else if (assetType === 'gpubatch') {
                 // BigWorldGPUBatchCull Unity Asset Store link (placeholder)
                 unityStoreUrl = 'https://u3d.as/3AM7';
+            } else if (assetType === 'gpu2danimator') {
+                // GPU2DAnimator Unity Asset Store link
+                unityStoreUrl = 'https://assetstore.unity.com/packages/slug/334476';
+            } else if (assetType === 'gpuanimator') {
+                // GPUAnimator Unity Asset Store link
+                unityStoreUrl = 'https://assetstore.unity.com/packages/slug/331019';
             } else {
                 // Default fallback
                 unityStoreUrl = 'https://assetstore.unity.com/packages/slug/322226';
@@ -607,12 +622,36 @@
             }, observerOptions);
 
             // Observe all elements that need animation
-            document.querySelectorAll('.section, .feature, .plugin-showcase').forEach(el => {
+            document.querySelectorAll('.section, .plugin-showcase, .features-marquee').forEach(el => {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(30px)';
                 el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(el);
             });
+
+            // Build compact features rows with seamless loop and reversed order
+            const rowsContainer = document.getElementById('featuresRows');
+            const source = document.getElementById('featuresSource');
+            if (rowsContainer && source) {
+                const items = Array.from(source.querySelectorAll('.feature'));
+                const reversed = items.reverse();
+                const rowCount = 4;
+                const rows = new Array(rowCount).fill(0).map(() => document.createElement('div'));
+                rows.forEach((row, idx) => {
+                    row.className = 'features-row';
+                    row.style.setProperty('--dur', (40 + idx * 6) + 's');
+                    rowsContainer.appendChild(row);
+                });
+                // round-robin distribute
+                reversed.forEach((item, i) => {
+                    const row = rows[i % rowCount];
+                    row.appendChild(item.cloneNode(true));
+                });
+                // duplicate each row content to enable seamless loop
+                rows.forEach(row => {
+                    row.innerHTML = row.innerHTML + row.innerHTML;
+                });
+            }
         });
     </script>
 </body>

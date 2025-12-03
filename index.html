@@ -703,7 +703,21 @@
                         instancing, streaming, and SSSSS rendering. Treat them as living case studies</p>
                     </div>
                     <div class="plugin-grid">
-                    <!-- GPU2DAnimator URP 2D VAT (Newest first) -->
+                    <!-- GPULOD (Newest first) -->
+                    <div class="plugin-showcase" onclick="openUnityStore('gpulod')">
+                        <div class="plugin-image">
+                            <img src="GPULOD.jpg" alt="GPULOD Enterprise GPU LOD Framework Preview">
+                        </div>
+                        <h3 class="plugin-title">GPULOD</h3>
+                        <p class="plugin-description">
+                            GPULOD is an enterprise-grade URP-ready GPU LOD framework engineered for ultra-scalable, visually rich Unity open worlds.
+                            BigWorldGPULod delivers GPU-driven LOD & indirect instancing with one-click decimation workflows and a lean runtime for fast, production-ready deployment.
+                        </p>
+                        <a href="#" class="unity-store-btn" onclick="event.stopPropagation(); openUnityStore('gpulod');">
+                            View on Unity Asset Store
+                        </a>
+                    </div>
+                    <!-- GPU2DAnimator URP 2D VAT -->
                     <div class="plugin-showcase" onclick="openUnityStore('gpu2danimator')">
                         <div class="plugin-image">
                             <img src="GPU2DAnimator.jpg" alt="GPU2DAnimator URP 2D VAT Preview">
@@ -801,7 +815,12 @@
                     <!-- Unified Features Marquee (compact, 4 rows, auto-scroll) -->
                     <div class="features-marquee">
                         <div class="features-rows" id="featuresRows"></div>
-                        <div id="featuresSource" style="display:none;">
+                    <div id="featuresSource" style="display:none;">
+                        <!-- GPULOD Key Features -->
+                        <div class="feature"><div class="feature-icon">🌀</div><h3>GPU LOD Core</h3><p>Enterprise GPU-driven LOD with indirect instancing for URP</p></div>
+                        <div class="feature"><div class="feature-icon">🧱</div><h3>One-Click Decimation</h3><p>Automatic mesh reductions for massive asset libraries</p></div>
+                        <div class="feature"><div class="feature-icon">🚀</div><h3>Ultra-Scalable Worlds</h3><p>Tuned for dense, visually rich open-world streaming</p></div>
+                        <div class="feature"><div class="feature-icon">⚙️</div><h3>Lean Runtime</h3><p>Lightweight runtime stack for production-ready deployments</p></div>
                             <!-- GPU2DAnimator Key Features -->
                             <div class="feature"><div class="feature-icon">🧷</div><h3>URP‑Ready VAT</h3><p>GPU‑driven 2D skeletal animation optimized for URP</p></div>
                             <div class="feature"><div class="feature-icon">🧪</div><h3>EXR Bake</h3><p>Bake SpriteSkin motion into EXR textures for zero CPU animator cost</p></div>
@@ -897,6 +916,9 @@
             } else if (assetType === 'gpuanimator') {
                 // GPUAnimator Unity Asset Store link
                 unityStoreUrl = 'https://assetstore.unity.com/packages/slug/331019';
+            } else if (assetType === 'gpulod') {
+                // GPULOD Unity Asset Store link
+                unityStoreUrl = 'https://u3d.as/3FyK';
             } else {
                 // Default fallback
                 unityStoreUrl = 'https://assetstore.unity.com/packages/slug/322226';

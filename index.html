@@ -708,6 +708,21 @@
                       - Edit each plugin card's data-order number below (higher number shows first).
                       - The HTML order in this file does NOT matter after sorting on page load.
                     -->
+                    <!-- ScreenSpaceNPRRendering -->
+                    <div class="plugin-showcase" data-order="973" onclick="openUnityStore('screenspacenprrendering')">
+                        <!-- EDIT: change data-order to reorder -->
+                        <div class="plugin-image">
+                            <img src="ScreenSpaceNPRRendering.jpg" alt="ScreenSpaceNPRRendering Screen-Space NPR Preview">
+                        </div>
+                        <h3 class="plugin-title">ScreenSpaceNPRRendering</h3>
+                        <p class="plugin-description">
+                            ScreenSpaceNPRRendering is a URP-compatible, screen-space NPR renderer for stylized visuals—built around crisp outlines
+                            and layer-driven effects. Add a production-ready toon/NPR look as a fullscreen camera effect with fast setup and consistent results.
+                        </p>
+                        <a href="#" class="unity-store-btn" onclick="event.stopPropagation(); openUnityStore('screenspacenprrendering');">
+                            View on Unity Asset Store
+                        </a>
+                    </div>
                     <!-- CharacterClothBindingMaster -->
                     <div class="plugin-showcase" data-order="994" onclick="openUnityStore('characterclothbindingmaster')">
                         <!-- EDIT: change data-order to reorder -->
@@ -949,6 +964,11 @@
                     <div class="features-marquee">
                         <div class="features-rows" id="featuresRows"></div>
                     <div id="featuresSource" style="display:none;">
+                        <!-- ScreenSpaceNPRRendering Key Features -->
+                        <div class="feature"><div class="feature-icon">🖍️</div><h3>Screen-Space Outlines</h3><p>Crisp outlines and edge stylization as a fullscreen camera effect</p></div>
+                        <div class="feature"><div class="feature-icon">🧱</div><h3>Layer-Driven FX</h3><p>Control NPR effects by layers for clean art direction</p></div>
+                        <div class="feature"><div class="feature-icon">🧩</div><h3>URP Compatible</h3><p>Designed for URP projects with modern camera/post workflows</p></div>
+                        <div class="feature"><div class="feature-icon">⚡</div><h3>Fast Setup</h3><p>Drop-in, production-ready stylization with practical defaults</p></div>
                         <!-- CharacterClothBindingMaster Key Features -->
                         <div class="feature"><div class="feature-icon">🧥</div><h3>Cloth Binding</h3><p>Bind garments to characters faster with production-ready workflows</p></div>
                         <div class="feature"><div class="feature-icon">🦴</div><h3>Bone Mapping</h3><p>Practical helpers for mapping clothing rigs to character skeletons</p></div>
@@ -1116,6 +1136,9 @@
             } else if (assetType === 'characterclothbindingmaster') {
                 // CharacterClothBindingMaster Unity Asset Store link
                 unityStoreUrl = 'https://assetstore.unity.com/packages/slug/359516';
+            } else if (assetType === 'screenspacenprrendering') {
+                // ScreenSpaceNPRRendering Unity Asset Store link
+                unityStoreUrl = 'https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/screenspacenprrendering-372000';
             } else {
                 // Default fallback
                 unityStoreUrl = 'https://assetstore.unity.com/packages/slug/322226';

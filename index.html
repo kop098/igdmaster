@@ -708,6 +708,21 @@
                       - Edit each plugin card's data-order number below (higher number shows first).
                       - The HTML order in this file does NOT matter after sorting on page load.
                     -->
+                    <!-- CharacterAvatarTransfer -->
+                    <div class="plugin-showcase" data-order="990" onclick="openUnityStore('characteravatartransfer')">
+                        <!-- EDIT: change data-order to reorder -->
+                        <div class="plugin-image">
+                            <img src="CharacterAvatarTransfer.jpg" alt="CharacterAvatarTransfer Humanoid Avatar Transfer Preview">
+                        </div>
+                        <h3 class="plugin-title">CharacterAvatarTransfer</h3>
+                        <p class="plugin-description">
+                            CharacterAvatarTransfer is a production tool for humanoid avatar transfer and bone redirection in Unity.
+                            Copy/repair skeleton mappings, migrate rigs, and retarget animations with a fast, repeatable workflow designed for character pipelines.
+                        </p>
+                        <a href="#" class="unity-store-btn" onclick="event.stopPropagation(); openUnityStore('characteravatartransfer');">
+                            View on Unity Asset Store
+                        </a>
+                    </div>
                     <!-- ScreenSpaceNPRRendering -->
                     <div class="plugin-showcase" data-order="973" onclick="openUnityStore('screenspacenprrendering')">
                         <!-- EDIT: change data-order to reorder -->
@@ -964,6 +979,11 @@
                     <div class="features-marquee">
                         <div class="features-rows" id="featuresRows"></div>
                     <div id="featuresSource" style="display:none;">
+                        <!-- CharacterAvatarTransfer Key Features -->
+                        <div class="feature"><div class="feature-icon">🦴</div><h3>Bone Redirection</h3><p>Redirect and copy bone mappings between humanoid rigs</p></div>
+                        <div class="feature"><div class="feature-icon">🧩</div><h3>Avatar Transfer</h3><p>Transfer humanoid avatar data across characters with fewer manual steps</p></div>
+                        <div class="feature"><div class="feature-icon">🛠️</div><h3>Bone Repair</h3><p>Fix common skeleton/retargeting issues with practical tooling</p></div>
+                        <div class="feature"><div class="feature-icon">🎬</div><h3>Animation Retarget</h3><p>Speed up animation migration for production character pipelines</p></div>
                         <!-- ScreenSpaceNPRRendering Key Features -->
                         <div class="feature"><div class="feature-icon">🖍️</div><h3>Screen-Space Outlines</h3><p>Crisp outlines and edge stylization as a fullscreen camera effect</p></div>
                         <div class="feature"><div class="feature-icon">🧱</div><h3>Layer-Driven FX</h3><p>Control NPR effects by layers for clean art direction</p></div>
@@ -1139,6 +1159,9 @@
             } else if (assetType === 'screenspacenprrendering') {
                 // ScreenSpaceNPRRendering Unity Asset Store link
                 unityStoreUrl = 'https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/screenspacenprrendering-372000';
+            } else if (assetType === 'characteravatartransfer') {
+                // CharacterAvatarTransfer Unity Asset Store link
+                unityStoreUrl = 'https://assetstore.unity.com/packages/tools/modeling/characteravatartransfer-374246';
             } else {
                 // Default fallback
                 unityStoreUrl = 'https://assetstore.unity.com/packages/slug/322226';
